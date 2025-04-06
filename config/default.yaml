@@ -1,0 +1,28 @@
+# In-silico Protein Design Pipeline Configuration
+
+# Standard pipeline configuration
+standard:
+  version: unconditional
+  inverse_fold_model: proteinmpnn
+  fold_model: esmfold
+  clean: true
+
+# Diversity pipeline configuration
+diversity:
+  max_ctm_threshold: 0.6
+
+# Resource allocation
+resources:
+  num_cpus: 2
+  num_gpus: 1
+  batch_size: 1
+
+# File paths
+paths:
+  tm_score_exec: packages/TMscore/TMscore
+  tm_align_exec: packages/TMscore/TMalign
+
+# General settings
+general:
+  verbose: false
+  cache_results: true
