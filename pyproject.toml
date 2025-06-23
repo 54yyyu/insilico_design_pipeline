@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline"
+version = "0.0.1"
+description = "In-silico protein design evaluation pipeline"
+requires-python = ">=3.7"
+dependencies = [
+    "tqdm",
+    "numpy",
+    "pandas"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pipeline*"]

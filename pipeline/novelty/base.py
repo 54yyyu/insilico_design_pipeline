@@ -129,7 +129,7 @@ class NoveltyPipeline():
 							if line.startswith('TM-score') and 'Chain_1' in line:
 								reference_names.append(reference_filepath.split('/')[-1].split('.')[0])
 								reference_tm_scores.append(float(line.split('(')[0].split('=')[-1].strip()))
-					os.remove(output_filepath)
+					# os.remove(output_filepath)
 
 				# Aggregate
 				closest_reference_idx = np.argmax(reference_tm_scores)

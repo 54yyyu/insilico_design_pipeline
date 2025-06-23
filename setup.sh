@@ -126,6 +126,7 @@ mamba activate "${CONDA_ENV_NAME}"
 
 # Install base requirements
 echo "Installing base requirements..."
+pip install pipeline
 $CONDA_CMD install -y -c conda-forge numpy pandas tqdm matplotlib pyyaml pip
 
 # Install the package in development mode
@@ -249,6 +250,8 @@ if [[ "$INSTALL_INVERSE_FOLD_MODELS" == "true" ]]; then
     
     echo "ProteinMPNN setup complete!"
 fi
+
+pip install numpy==1.25
 
 # Create a config file
 echo "Creating default configuration..."
