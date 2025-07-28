@@ -4,7 +4,7 @@ set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PACKAGES_DIR="${SCRIPT_DIR}/packages"
 CONDA_ENV_NAME="insilico"
-CUDA_VERSION="11.8"  # Default CUDA version
+CUDA_VERSION="12.3"  # Default CUDA version (11.8 is the latest version)
 
 # Parse command line arguments
 INSTALL_FOLD_MODELS=false
@@ -119,7 +119,8 @@ fi
 
 # Activate the environment
 # source "$(conda info --base)/etc/profile.d/conda.sh"
-module load cuda${CUDA_VERSION}/
+# module load cuda${CUDA_VERSION}/
+module load cuda
 mamba init
 source ~/.bashrc
 mamba activate "${CONDA_ENV_NAME}"
